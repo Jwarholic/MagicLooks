@@ -9,6 +9,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'faker'
 gem "dropbox-api"
 gem 'dropbox-sdk'
+gem 'httparty'
+gem 'pry'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
