@@ -8,9 +8,29 @@
 require 'faker'
 
 #Seed some users!
-users = 30.times.map do
-  User.create!( name: Faker::Name.first_name,
-                email: Faker::Internet.email,
-                password:'p',
-                face_id: 'ABC')
-end
+User.create!( name: "Dawit",
+							email: "d@d.com",
+							password: 'p',
+							face_id: '61dbaa98-427b-4e52-acce-3ef301363769')
+
+User.create!( name: "Jason",
+							email: "j@j.com",
+							password: 'p',
+							face_id: 'a6dcb570-ce43-420b-a1a0-179a11065b69' )
+
+User.create!( name: "collin",
+							email: "c@c.com",
+							password: 'p',
+							face_id: '2d95aac1-4374-4923-bca0-682b9aeccecf')
+
+User.create!( name: "brandon",
+							email: "b@b.com",
+							password: 'p',
+							face_id: '412b2789-8c46-46e6-bc6c-75812881c95b')
+
+User.create!( name: "amrin",
+							email: "a@a.com",
+							password: 'p',
+							face_id: '3aaac689-72d8-41ce-82b4-51e420472e4b')
+
+
