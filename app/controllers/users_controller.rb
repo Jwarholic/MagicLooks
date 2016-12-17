@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   layout "application"
+  layout false, only: [:index]
 
     def index
       @image = WeatherHelper.weatherimage
