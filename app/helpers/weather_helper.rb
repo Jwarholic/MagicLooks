@@ -1,5 +1,3 @@
-require 'pry'
-
 module WeatherHelper
 
 	def self.weather

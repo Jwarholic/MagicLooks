@@ -2,8 +2,9 @@ class UsersController < ApplicationController
   layout "application"
 
     def index
-       #WeatherHelper.weatherimage
-      p WeatherHelper.weatherdesc
+      @image = WeatherHelper.weatherimage
+      @temp = WeatherHelper.weathertemp
+      @weatherdesc = WeatherHelper.weatherdesc
     end
 
     def new
