@@ -7,10 +7,7 @@ class UsersController < ApplicationController
       @temp = WeatherHelper.weathertemp
       @weatherdesc = WeatherHelper.weatherdesc
 
-      respond_to do |f|
-      f.html
-      f.js { render 'new' }
-    end
+
 
     end
 

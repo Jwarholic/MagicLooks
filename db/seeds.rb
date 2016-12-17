@@ -12,5 +12,5 @@ users = 30.times.map do
   User.create!( name: Faker::Name.first_name,
                 email: Faker::Internet.email,
                 password:'p',
-                avatar: Faker::Avatar.image(Faker::Lorem.word, "80x80") )
+                face_id: 'ABC')
 end
