@@ -6,6 +6,12 @@ class UsersController < ApplicationController
       @image = WeatherHelper.weatherimage
       @temp = WeatherHelper.weathertemp
       @weatherdesc = WeatherHelper.weatherdesc
+
+      respond_to do |f|
+      f.html
+      f.js { render 'new' }
+    end
+
     end
 
     def new
