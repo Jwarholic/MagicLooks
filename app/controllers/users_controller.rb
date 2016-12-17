@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   layout "application"
-  layout false, only: [:index]
 
     def index
       @image = WeatherHelper.weatherimage
@@ -48,8 +47,6 @@ class UsersController < ApplicationController
 
     def update
       @user = User.find(params[:id])
-      p @user
-      p params
       # if current_user == @user
         if @user.update(user_params)
           redirect_to user_path(current_user)
