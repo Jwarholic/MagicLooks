@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   layout "application"
 
     def index
+      #Save all the variables from the Weather API.
       @image = WeatherHelper.weatherimage
       @temp = WeatherHelper.weathertemp
       @weatherdesc = WeatherHelper.weatherdesc

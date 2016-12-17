@@ -21,6 +21,7 @@ module WeatherHelper
 
   #Weather temp
   def self.weathertemp
+    #Converts Kelvin to Degrees / Rounds the number.
 		(1.8 * (weather["main"]["temp"] - 273) + 32).ceil
   end
 

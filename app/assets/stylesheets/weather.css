@@ -2,3 +2,9 @@
 	color: white;
 	background-color: black;
 }
+
+#weather-icon {
+	height: 100px;
+	width: 100px;
+}
+
