@@ -24,8 +24,8 @@
 }
 
 #weather-icon img {
-	margin-left: auto;
-	margin-right: auto;
+	height: 100%;
+	width: 100%;
 }
 
 #mirror-temp {
@@ -34,8 +34,11 @@
 	border-width: 5px;
 	width: 33%;
 	height: 33%;
-	font-size: 30vh;
 	position: absolute;
+}
+
+#mirror-temp p {
+	font-size: 55vw;
 }
 
 #weather-desc {
