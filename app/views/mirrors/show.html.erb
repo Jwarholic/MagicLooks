@@ -1,1 +1,2 @@
-<%= @mirror.face_id ? @mirror.user.name + " is by the mirror" : "no body by the mirror" %>
+<% user = User.find_by(face_id: @mirror.face_id) %>
+<%= @mirror.face_id ? user.name + " is by the mirror" : "no body by the mirror" %>
