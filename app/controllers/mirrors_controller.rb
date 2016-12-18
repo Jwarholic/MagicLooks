@@ -33,18 +33,12 @@ class MirrorsController < ApplicationController
     end
 
     def update
-      # @user = User.find(params[:user_id])
-      # @face_id = @user.face_id
+      @user = User.find(params[:user_id])
+      @face_id = @user.face_id
       @mirror = Mirror.find(params[:id])
 
-      # @mirror.update(face_id: @face_id)
-      # redirect_to user_mirror_path(@user, @mirror)
-
-      respond_to do |f|
-        f.html { render json: @mirror }
-        f.js { render json: @mirror }
-      end
-
+      @mirror.update(face_id: @face_id)
+      redirect_to user_mirror_path(@user, @mirror)
     end
 
 end
