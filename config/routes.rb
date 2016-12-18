@@ -9,5 +9,4 @@ Rails.application.routes.draw do
   # patch '/users/:id/posts/', to: 'posts#update'
   root 'users#index'
   get '/logout' => 'sessions#destroy'
-  delete 'users/mirrors' => 'mirrors#destroy'
 end
