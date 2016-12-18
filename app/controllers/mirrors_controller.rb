@@ -42,7 +42,7 @@ class MirrorsController < ApplicationController
 
       respond_to do |f|
         f.html { render json: @mirror }
-        f.js
+        f.js { render json: @mirror }
       end
 
     end
