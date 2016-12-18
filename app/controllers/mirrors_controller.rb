@@ -29,8 +29,9 @@ class MirrorsController < ApplicationController
     end
 
     def update
-      @face_id = params[:face_id]
-      @mirror = Mirror.find(params[:mirror_id])
+      @user = params[:user_id]
+      @face_id = @user.face_id
+      @mirror = Mirror.find(params[:id])
 
       @mirror.update(face_id: @face_id)
       redirect_to mirror_path(@mirror)

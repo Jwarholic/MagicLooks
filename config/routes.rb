@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create]
-  resources :mirrors
+
   resources :users, only: [:show, :index, :new, :create, :edit, :update] do 
+  	resources :mirrors
   end
 
   # patch '/users/:id/posts/', to: 'posts#update'
