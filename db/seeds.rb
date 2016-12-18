@@ -35,5 +35,7 @@ User.create!( name: "amrin",
 
 5.times{Mirror.create!(face_id: nil, user_id: rand(1..5))}
 
+UserMirror.create(user_id: 1, mirror_id: 1)
+
 
 
