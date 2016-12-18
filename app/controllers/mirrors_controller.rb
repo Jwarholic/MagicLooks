@@ -29,6 +29,7 @@ class MirrorsController < ApplicationController
     #       redirect_to index
     #   end
     # end
+
     def edit
       @mirror = Mirror.find(params[:id])
     end
@@ -45,7 +46,7 @@ class MirrorsController < ApplicationController
 
     def destroy
       @user = User.find(params[:id])
-      @face_id = nil
+      @mirror = find_by(users: params[:id])
       redirect_to :home
     end
 
