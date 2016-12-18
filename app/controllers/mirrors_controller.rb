@@ -3,10 +3,11 @@ class MirrorsController < ApplicationController
     def index
       #@face_ids = User.select { |u| u.face_id }
       @face_ids = {}
-      @face_ids["face_id"] = []
+      @face_ids["face_info"] = []
 
       User.all.each do |u|
-        @face_ids["face_id"] << u.face_id
+        @face_ids["face_info"] << {user_id: u.id, user_faceID: u.face_id}
+        p @face_ids['face_info']
       end
 
       respond_to do |f|
@@ -40,6 +41,12 @@ class MirrorsController < ApplicationController
       @mirror.update(face_id: @face_id)
       
       redirect_to user_mirror_path(@user, @mirror)
+    end
+
+    def destroy
+      @user = User.find(params[:id])
+      @face_id = nil
+      redirect_to :home
     end
 
 end
