@@ -45,9 +45,11 @@ class MirrorsController < ApplicationController
     end
 
     def destroy
-      @mirror = find_by(users: params[:id])
+      @mirro = Mirror.find(params[:id])
       @mirror.face_id = nil
-      redirect_to :home
+      respond_to do |format|
+       format.html { render json: {response: 'success'} }
+      end
     end
 
 end
