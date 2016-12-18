@@ -1,0 +1,24 @@
+<html>
+<head>
+	<title>Mirror</title>
+	<% content_for(:head) do %>
+  <%= javascript_include_tag 'weather.js' %>
+<% end %>
+</head>
+<body id='mirror'>
+
+	<div id='mirror'>
+	<!-- Displays The Temp for the weather -->
+	
+	<%= @temp %> degrees
+	<img src=<%= @image %> id="weather-icon">
+	<br>
+	<!-- Displays the desc -->
+	<%= @weatherdesc %> today.
+	</div>
+	<div id="clockbox">
+		
+	</div>
+
+</body>
+</html>

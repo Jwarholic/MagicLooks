@@ -1,0 +1,37 @@
+<% if current_user %>
+
+
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	 <%= link_to "Magic Looks", root_path, class: "navbar-brand" %>	
+	    </div>
+	    <ul class="nav navbar-nav">
+	    <li><%= link_to "Profile", user_path(current_user.id) %>
+	</li>
+	    <li><%= link_to "Logout", '/logout' %></li>
+	    </ul>
+	  </div>
+	</nav>
+
+
+
+<% else %>
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+ <%= link_to "Magic Looks", root_path, class: "navbar-brand" %>	
+    </div>
+    <ul class="nav navbar-nav">
+    <li><%= link_to "Login", new_session_path %>
+</li>
+    <li><%= link_to "Sign-Up", new_user_path %></li>
+    </ul>
+  </div>
+</nav>
+
+
+<% end %>
+
