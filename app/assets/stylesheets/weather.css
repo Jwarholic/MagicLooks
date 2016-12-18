@@ -3,8 +3,27 @@
 	background-color: black;
 }
 
+#header {
+	
+}
+
 #weather-icon {
 	height: 100px;
 	width: 100px;
+}
+
+#mirror-temp {
+	margin-top: 33vh;
+	border-style: solid;
+	border-width: 5px;
+	width: 33%;
+	height: 33%;
+	font-size: 30vh;
+	position: absolute;
+	padding-top: -10em;
+}
+
+#weather-desc {
+	position: inline-block;
 }
 
