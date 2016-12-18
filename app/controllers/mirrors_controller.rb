@@ -45,8 +45,8 @@ class MirrorsController < ApplicationController
     end
 
     def destroy
-      @user = User.find(params[:id])
       @mirror = find_by(users: params[:id])
+      @mirror.face_id = nil
       redirect_to :home
     end
 

@@ -7,5 +7,8 @@ services:
 
 before_script:
   - psql -c 'create database magic_looks_test;' -U postgres
+  
+script:
+  - "bundle exec rake travis:run"
 
   
