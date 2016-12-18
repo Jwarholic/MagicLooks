@@ -46,7 +46,7 @@ class MirrorsController < ApplicationController
 
     def destroy
       @mirror = Mirror.find(params[:id])
-      @mirror.face_id = nil
+      @mirror.update(face_id: nil)
       respond_to do |format|
        format.html { render json: {response: 'success'} }
       end
