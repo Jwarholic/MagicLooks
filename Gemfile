@@ -11,7 +11,6 @@ gem "dropbox-api"
 gem 'dropbox-sdk'
 gem 'httparty'
 gem 'pry'
-gem 'rvm', '~>2.2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
