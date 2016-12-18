@@ -5,6 +5,7 @@
   <%= javascript_include_tag 'weather.js' %>
 <% end %>
 </head>
+
 <body id='mirror'>
 
 	<div id='header'>
@@ -15,15 +16,15 @@
 		<%= @temp %>°	
 	</div>
 
-<!-- 	<div id='weather-desc'>
+	<div id='weather-icon'>
+		<img src=<%= @image %> ">
+	</div>
+	<!-- <div id='weather-desc'>
 	<%= @weatherdesc %>
-	</div>
+	</div> -->
 
-	<img src=<%= @image %> id="weather-icon">
-	<!-- Displays the desc -->
-<!-- 	 today.
-	</div>
-	<div id="clockbox">
+	
+<!-- 	<div id="clockbox">
 		
 	</div> -->
 </body>
