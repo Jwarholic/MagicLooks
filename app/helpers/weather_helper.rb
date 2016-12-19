@@ -26,7 +26,7 @@ module WeatherHelper
     #900-999 extreme DONE
   
     id = weather["weather"][0]["id"]
-    
+
     if id > 800 && id < 805
         return "<div class='icon cloudy'>
                  <div class='cloud'></div>
@@ -81,7 +81,7 @@ end
 
   #Weather temp
   def self.weathertemp
-    #Converts Kelvin to Degrees / Rounds the number.
+    #Converts Kelvin to Degrees / Rounds the number. 
 		(1.8 * (weather["main"]["temp"] - 273) + 32).ceil
   end
 
