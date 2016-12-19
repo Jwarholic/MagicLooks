@@ -73,6 +73,11 @@
 	text-align: center;
 }
 
+#ajax-container p {
+	text-align: center;
+	line-height: 100px;
+}
+
 
 
 
