@@ -41,12 +41,18 @@ class MirrorsController < ApplicationController
     def create
       @user = User.find(current_user)
       @mirror = Mirror.new(name: params[:name], owner_id: @user.id, email: @user.email, password_digest: params[:password])
-      
-      if @mirror
-        redirect_to :back
+
+      if @mirror.save
+
+        respond_to do |f|
+          f.html { redirect_to :back }
+          f.js {}
+        end
+
       else
-        redirect_to :back
+        render 'new'
       end
+
     end
 
     def update
