@@ -48,12 +48,12 @@ class MirrorsController < ApplicationController
       if @mirror.save
 
         respond_to do |f|
-          f.html { redirect_to :back }
+          f.html { redirect_to mirror_path(@mirror) }
           f.js {}
         end
 
       else
-        render 'new'
+        redirect_to :back
       end
 
     end
@@ -88,5 +88,11 @@ class MirrorsController < ApplicationController
       end
 
     end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :email, :password)
+  end
 
 end

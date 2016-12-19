@@ -3,7 +3,7 @@ $(document).ready( function() {
   
   var logInCheck = function() {
     $.ajax({
-      url: "/users/1/mirrors/1",
+      url: "/users/#{current_user}/mirrors/#{session[:mirror_id]}",
       method: 'get',
       dataType: 'json'
     })
