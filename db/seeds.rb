@@ -33,7 +33,7 @@ User.create!( name: "amrin",
 							password: 'p',
 							face_id: '3aaac689-72d8-41ce-82b4-51e420472e4b')
 
-5.times{Mirror.create!(face_id: nil, user_id: rand(1..5))}
+5.times{Mirror.create!(face_id: nil, owner_id: rand(1..5))}
 
 UserMirror.create(user_id: 1, mirror_id: 1)
 

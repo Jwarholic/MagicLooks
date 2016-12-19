@@ -30,4 +30,8 @@ module WeatherHelper
   	weather["weather"][0]["description"]
   end
 
+  def self.weatherlocation
+    weather["name"]
+  end
+
 end
