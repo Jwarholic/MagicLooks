@@ -7,6 +7,8 @@ class UsersController < ApplicationController
       @temp = WeatherHelper.weathertemp
       @weatherdesc = WeatherHelper.weatherdesc
       @weatherloc = WeatherHelper.weatherlocation
+
+      @titles = NewsHelper.titles
     end
 
     def new
