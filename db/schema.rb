@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20161218200214) do
     t.string   "email"
     t.string   "password_digest"
     t.string   "person_id"
+    t.string   "link"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
