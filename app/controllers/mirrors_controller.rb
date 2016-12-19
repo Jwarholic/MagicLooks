@@ -20,7 +20,7 @@ class MirrorsController < ApplicationController
       @user = User.find(params[:id])
 
       respond_to do |f|
-        f.html { render  :show }
+        f.html { render  json: @mirror.person_id }
       end
 
     end
