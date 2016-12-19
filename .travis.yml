@@ -1,11 +1,22 @@
+# language: ruby
+# rvm:
+#   - 2.3.1
+
+# services:
+#   - postgresql
+
+# before_script:
+#   - psql -c 'create database magic_looks_test;' -U postgres
+
+#   
 language: ruby
 rvm:
   - 2.3.1
-
-services:
-  - postgresql
-
+env:
+  - DB=postgresql
+script: 
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rspec spec/
 before_script:
-  - psql -c 'create database magic_looks_test;' -U postgres
-
-  
+  - psql -c 'create database my_app_test' -U postgres
