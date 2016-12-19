@@ -61,10 +61,17 @@ class MirrorsController < ApplicationController
     def update
       # @user = User.find(params[:user_id])
       # @person_id = @user.person_id
-      # @mirror = Mirror.find(params[:id])
+      @mirror = Mirror.find(params[:id])
+      
+      if @mirror.update(person_id: params[:person_id])
 
-      respond_to do |f|
-        f.html { render  json: params }
+        respond_to do |f|
+          f.html { render  json: { status: 'successful' } }
+        end
+      else
+        respond_to do |f|
+          f.html { render json: { status: 'unsuccessful' } }
+        end
       end
       
       # @mirror.update(person_id: params[:person_id])
