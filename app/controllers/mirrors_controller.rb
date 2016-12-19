@@ -18,6 +18,12 @@ class MirrorsController < ApplicationController
 
     def show
       @mirror = Mirror.find(params[:id])
+
+      respond_to do |f|
+        f.html { }
+        f.js { }
+      end
+      
     end
 
     # def new
