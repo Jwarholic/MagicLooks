@@ -14,7 +14,7 @@ class UsersSessionsController < ApplicationController
       redirect_to @user
     else
     # If user's login doesn't work, send them back to the login form.
-      redirect_to new_session_path
+      redirect_to new_users_session_path
     end
   end
 
