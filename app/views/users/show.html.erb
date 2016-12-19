@@ -3,6 +3,7 @@
 
 Hello <%= @user.name.capitalize %>.
 
-
+<%= link_to 'New Mirror', new_mirror_path, remote: true %>
+<div class='new-mirror-form'></div>
 
 <%= link_to "Edit", edit_user_path(@user) %>

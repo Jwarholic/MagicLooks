@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :users do 
   	resources :mirrors
   end
-  resources :mirrors only: [:new,:index]
+
+  resources :mirrors, only: [:new,:index, :create]
 
   # patch '/users/:id/posts/', to: 'posts#update'
   root 'users#index'
