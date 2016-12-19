@@ -6,9 +6,7 @@ class UsersController < ApplicationController
       @image = WeatherHelper.weatherimage
       @temp = WeatherHelper.weathertemp
       @weatherdesc = WeatherHelper.weatherdesc
-
-
-
+      @weatherloc = WeatherHelper.weatherlocation
     end
 
     def new
