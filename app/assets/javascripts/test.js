@@ -1,8 +1,18 @@
-// console.log("this works")
+$(document).ready( function() {
+  var loggedIn = false;
+  console.log('hey');
 
-// $.ajax({
-// 	url: "https://magiclooks.herokuapp.com/users/5/mirrors/1",
-// 	method: "PUT"
-// }).done(function(data){
-// 	console.log(data)
-// })
+    $.ajax({
+      url: "/users/1/mirrors/1",
+      method: 'get'
+    })
+    .done(function(response) {
+      console.log(response);
+      if (response !== undefined) {
+        loggedIn = true;
+        console.log(loggedIn);
+      } else {
+        console.log('mothaflocka');
+      };
+    });
+});

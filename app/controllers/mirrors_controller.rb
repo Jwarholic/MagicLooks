@@ -12,16 +12,15 @@ class MirrorsController < ApplicationController
 
       respond_to do |f|
         f.html { render json: @face_ids }
-        f.js
       end
     end
 
     def show
       @mirror = Mirror.find(params[:id])
       @user = User.find(params[:id])
+
       respond_to do |f|
-        f.html { }
-        f.js { render @mirror.person_id }
+        f.html { render  :show, layout: false }
       end
 
     end
@@ -53,9 +52,11 @@ class MirrorsController < ApplicationController
     def destroy
       @mirror = Mirror.find(params[:id])
       @mirror.update(person_id: nil)
+
       respond_to do |format|
-       format.html { render json: {response: 'success'} }
+       format.html { render json: { response: 'success' } }
       end
+
     end
 
 end
