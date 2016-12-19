@@ -1,25 +1,28 @@
 class MirrorsController < ApplicationController
 
     def index
-      #@face_ids = User.select { |u| u.person_id }
+
+      # User.all.each do |u|
+      #   @person_ids[u.person_id] = u.id
+      # end
+
+      # respond_to do |f|
+      #   f.html { render json: @person_ids }
+      # end
+    end
+
+    def show
+      # @mirror = Mirror.find(params[:id])
+      # @user = User.find(params[:id])
+
       @person_ids = {}
-      # @face_ids["person_id"] = {'Users_info'}
 
       User.all.each do |u|
         @person_ids[u.person_id] = u.id
       end
 
       respond_to do |f|
-        f.html { render json: @person_ids }
-      end
-    end
-
-    def show
-      @mirror = Mirror.find(params[:id])
-      @user = User.find(params[:id])
-
-      respond_to do |f|
-        f.html { render  json: @mirror.person_id }
+        f.html { render  json: @person_ids }
       end
 
     end
