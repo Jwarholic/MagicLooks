@@ -23,3 +23,7 @@ test:
 production:
   <<: *default
   database: db/production
+  
+test:
+  adapter: postgresql
+  database: travis_ci_tes
