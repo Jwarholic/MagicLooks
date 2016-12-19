@@ -1,1 +1,11 @@
-$('.mirror-greeting').html("<%= j render 'show'%>");
+function something(result) {
+  console.log(result);
+  
+  $.ajax({
+    url: "users/<%= current_user%>/mirrors/<%= params[:id]%>",
+    method: 'get'
+  })
+  .done({
+    
+  })
+};

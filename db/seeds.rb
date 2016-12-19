@@ -11,29 +11,29 @@ require 'faker'
 User.create!( name: "Dawit",
 							email: "d@d.com",
 							password: 'p',
-							face_id: '61dbaa98-427b-4e52-acce-3ef301363769')
+							person_id: '61dbaa98-427b-4e52-acce-3ef301363769')
 
 User.create!( name: "Jason",
 							email: "j@j.com",
 							password: 'p',
-							face_id: 'a6dcb570-ce43-420b-a1a0-179a11065b69' )
+							person_id: 'a6dcb570-ce43-420b-a1a0-179a11065b69' )
 
 User.create!( name: "collin",
 							email: "c@c.com",
 							password: 'p',
-							face_id: '2d95aac1-4374-4923-bca0-682b9aeccecf')
+							person_id: '2d95aac1-4374-4923-bca0-682b9aeccecf')
 
 User.create!( name: "brandon",
 							email: "b@b.com",
 							password: 'p',
-							face_id: '412b2789-8c46-46e6-bc6c-75812881c95b')
+							person_id: '412b2789-8c46-46e6-bc6c-75812881c95b')
 
 User.create!( name: "amrin",
 							email: "a@a.com",
 							password: 'p',
-							face_id: '3aaac689-72d8-41ce-82b4-51e420472e4b')
+							person_id: '3aaac689-72d8-41ce-82b4-51e420472e4b')
 
-5.times{Mirror.create!(face_id: nil, owner_id: rand(1..5))}
+5.times{Mirror.create!(person_id: nil, owner_id: rand(1..5))}
 
 UserMirror.create(user_id: 1, mirror_id: 1)
 

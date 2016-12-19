@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20161218200214) do
   enable_extension "plpgsql"
 
   create_table "mirrors", force: :cascade do |t|
-    t.string  "face_id"
+    t.string  "person_id"
     t.integer "owner_id"
   end
 
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20161218200214) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.string   "face_id"
+    t.string   "person_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

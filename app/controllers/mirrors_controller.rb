@@ -18,12 +18,12 @@ class MirrorsController < ApplicationController
 
     def show
       @mirror = Mirror.find(params[:id])
-
+      @user = User.find(params[:id])
       respond_to do |f|
         f.html { }
-        f.js { }
+        f.js { render @mirror.face_id }
       end
-      
+
     end
 
     # def new
