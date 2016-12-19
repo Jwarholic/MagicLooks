@@ -16,6 +16,7 @@ module WeatherHelper
   #GET THE ICON FOR THE CURRENT WEATHER.
   def self.weatherimage
   	icon = weather["weather"][0]["icon"]
+    p weather["weather"][0]["id"]
   	imageurl = "http://openweathermap.org/img/w/#{icon}.png"
   end
 
