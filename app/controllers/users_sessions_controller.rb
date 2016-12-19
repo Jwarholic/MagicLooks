@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class UsersSessionsController < ApplicationController
   #skip_before_filter  :verify_authenticity_token
   
   def new
@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       # Save the user id inside the browser cookie. This is how we keep the user 
       # logged in when they navigate around our website.
       session[:user_id] = @user.id
-      redirect_to user_path(@user)
+      redirect_to @user
     else
     # If user's login doesn't work, send them back to the login form.
       redirect_to new_session_path

@@ -9,7 +9,8 @@
 	    <ul class="nav navbar-nav">
 	    <li><%= link_to "Profile", user_path(current_user.id) %>
 	</li>
-	    <li><%= link_to "Logout", '/logout' %></li>
+	    <li><%= link_to "Logout User", '/logout/users' %></li>
+      <li><%= link_to "Logout Mirror", '/logout/mirrors' %></li>
 	    </ul>
 	  </div>
 	</nav>

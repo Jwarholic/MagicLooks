@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :sessions, only: [:new, :create]
+  resources :users_sessions, only: [:new, :create]
+  resources :mirrors_sessions, only: [:new, :create]
 
   resources :users do 
   	resources :mirrors
@@ -10,5 +11,6 @@ Rails.application.routes.draw do
 
   # patch '/users/:id/posts/', to: 'posts#update'
   root 'users#index'
-  get '/logout' => 'sessions#destroy'
+  get '/logout/users' => 'users_sessions#destroy'
+  get '/logout/mirrors' => 'mirrors_sessions#destroy'
 end
