@@ -8,7 +8,8 @@ module WeatherHelper
 
 		key = "0b00512afd38eb31d828e615774a2fd4"
 		#Call the weather api for the results.
-		weather = "http://api.openweathermap.org/data/2.5/weather?lat=#{lat}&lon=#{lon}&appid=#{key}"
+    weather = "http://api.openweathermap.org/data/2.5/weather?q=sanfrancisco&appid=0b00512afd38eb31d828e615774a2fd4"
+		# weather = "http://api.openweathermap.org/data/2.5/weather?lat=#{lat}&lon=#{lon}&appid=#{key}"
 		results = HTTParty.get(weather)
 
   end
@@ -25,7 +26,7 @@ module WeatherHelper
     #900-999 extreme DONE
   
     id = weather["weather"][0]["id"]
-    id = 330
+    
     if id > 800 && id < 805
         return "<div class='icon cloudy'>
                  <div class='cloud'></div>
