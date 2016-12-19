@@ -2,16 +2,15 @@ class MirrorsController < ApplicationController
 
     def index
       #@face_ids = User.select { |u| u.person_id }
-      @face_ids = {}
-      @face_ids["person_id"] = []
+      @person_ids = {}
+      # @face_ids["person_id"] = {'Users_info'}
 
       User.all.each do |u|
-        @face_ids["person_id"] << {user_id: u.id, user_faceID: u.person_id}
-        p @face_ids['person_id']
+        @person_ids[u.person_id] = u.id
       end
 
       respond_to do |f|
-        f.html { render json: @face_ids }
+        f.html { render json: @person_ids }
       end
     end
 
@@ -20,23 +19,34 @@ class MirrorsController < ApplicationController
       @user = User.find(params[:id])
 
       respond_to do |f|
-        f.html { render  :show, layout: false }
+        f.html { render  json: @mirror.person_id }
       end
 
     end
 
-    # def new
-    #     @user = User.find_by_email(params[:email])
-    #     if @user && @user.authenticate(params[:password])
-    #       # Save the user id inside the browser cookie. This is how we keep the user 
-    #       # logged in when they navigate around our website.
-    #       session[:user_id] = @user.id
-    #       redirect_to index
-    #   end
-    # end
+    def new
+      @mirror = Mirror.new
+
+      respond_to do |format|
+        format.html { render 'new' }
+        format.js {}
+      end
+
+    end
 
     def edit
       @mirror = Mirror.find(params[:id])
+    end
+
+    def create
+      @user = User.find(current_user)
+      @mirror = Mirror.new(name: params[:name], owner_id: @user.id, email: @user.email, password_digest: params[:password])
+      
+      if @mirror
+        redirect_to :back
+      else
+        redirect_to :back
+      end
     end
 
     def update

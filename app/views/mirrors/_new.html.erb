@@ -1,0 +1,8 @@
+<h2>New Mirror</h2>
+<%= form_for @mirror do |f| %>
+<label>Mirror Name: </label>
+  <%= f.text_field :name %>
+<label>Login Password: </label>
+  <%= f.password_field :password %>
+  <%= f.submit :submit %>
+<% end %>

@@ -11,6 +11,16 @@ class UsersController < ApplicationController
       @titles = NewsHelper.titles
     end
 
+
+    def show
+      @user = User.find(params[:id])
+      if correct_user
+        render 'show'
+      else
+        redirect_to '/'
+      end
+    end
+    
     def new
       @user = User.new
     end
@@ -24,15 +34,6 @@ class UsersController < ApplicationController
       else
         #Redirect to the home page if the user is incorrect.
         redirect_to root_path
-      end
-    end
-
-    def show
-      @user = User.find(params[:id])
-      if correct_user
-        render 'show'
-      else
-        redirect_to '/'
       end
     end
 
