@@ -1,13 +1,13 @@
 class MirrorsController < ApplicationController
 
     def index
-      #@face_ids = User.select { |u| u.face_id }
+      #@face_ids = User.select { |u| u.person_id }
       @face_ids = {}
-      @face_ids["face_info"] = []
+      @face_ids["person_id"] = []
 
       User.all.each do |u|
-        @face_ids["face_info"] << {user_id: u.id, user_faceID: u.face_id}
-        p @face_ids['face_info']
+        @face_ids["person_id"] << {user_id: u.id, user_faceID: u.person_id}
+        p @face_ids['person_id']
       end
 
       respond_to do |f|
@@ -21,7 +21,7 @@ class MirrorsController < ApplicationController
       @user = User.find(params[:id])
       respond_to do |f|
         f.html { }
-        f.js { render @mirror.face_id }
+        f.js { render @mirror.person_id }
       end
 
     end
@@ -42,17 +42,17 @@ class MirrorsController < ApplicationController
 
     def update
       @user = User.find(params[:user_id])
-      @face_id = @user.face_id
+      @person_id = @user.person_id
       @mirror = Mirror.find(params[:id])
 
-      @mirror.update(face_id: @face_id)
+      @mirror.update(person_id: @person_id)
       
       redirect_to user_mirror_path(@user, @mirror)
     end
 
     def destroy
       @mirror = Mirror.find(params[:id])
-      @mirror.update(face_id: nil)
+      @mirror.update(person_id: nil)
       respond_to do |format|
        format.html { render json: {response: 'success'} }
       end
