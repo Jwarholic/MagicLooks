@@ -1,6 +1,7 @@
 #mirror {
 	color: white;
 	background-color: black;
+	font-style: sans-serif;
 }
 
 #header {
@@ -21,11 +22,15 @@
 	width: 33%;
 	margin-top: 33vh;
 	margin-left: 33%;
+	font-size: 30px;
+	text-align: center;
 }
 
 #weather-icon img {
-	height: 100%;
-	width: 100%;
+	display: block;
+	margin: auto;
+	height: 60%;
+	width: 60%;
 }
 
 #mirror-temp {
@@ -37,11 +42,37 @@
 	position: absolute;
 }
 
-#mirror-temp p {
-	font-size: 55vw;
+#mirror-temp p#one {
+  font-size: 23vh;
 }
 
 #weather-desc {
 	position: inline-block;
 }
+
+#clockbox {
+	width: 33%;
+	height: 33%;
+	border-style: solid;
+	border-width: 3px;
+	margin-top: 33vh;
+	margin-left: 66%;
+	position: absolute;
+  font-size: 15vh;
+  line-height: 15vh;
+}
+
+#ajax-container {
+	font-size: 13vh;
+	border-style: solid;
+	border-width: 3px;
+	position :absolute;
+	margin-top:66vh;
+	width: 100%;
+	height: 33%;
+	text-align: center;
+}
+
+
+
 

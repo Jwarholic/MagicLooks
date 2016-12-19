@@ -13,19 +13,25 @@
 	</div>
 
 	<div id='mirror-temp'>
-		<p><%= @temp %>°</p>
+		<p id="one"><%= @temp %>°
+		</p>
 	</div>
 
 	<div id='weather-icon'>
 		<img src=<%= @image %> ">
+		<%= @weatherdesc %>
 	</div>
 	<!-- <div id='weather-desc'>
 	<%= @weatherdesc %>
 	</div> -->
+	<div id="clockbox">
+	</div>
 
-	
-<!-- 	<div id="clockbox">
-		
-	</div> -->
+	<div id="ajax-container">
+		<p>
+			<marquee behavior="scroll" direction="left">AJAX SECTION.</marquee>
+		</p>
+	</div>
+
 </body>
 </html>
