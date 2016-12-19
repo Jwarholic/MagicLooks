@@ -8,7 +8,7 @@ $(document).ready( function() {
     })
     .done(function(response) {
       console.log(response);
-      if (response !== undefined) {
+      if (response) {
         loggedIn = true;
         console.log(loggedIn);
       } else {
