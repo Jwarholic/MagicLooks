@@ -73,12 +73,8 @@ module WeatherHelper
     #WARNING
   else
   	icon = weather["weather"][0]["icon"]
-<<<<<<< HEAD
-    p weather["weather"][0]["id"]
   	imageurl = "http://openweathermap.org/img/w/#{icon}.png"
-=======
   	return "<img src='http://openweathermap.org/img/w/#{icon}.png' style='width:200px; height: 200px;'>"
->>>>>>> 48d25ba268aed4725961c4ce087809fa7d2ff116
   end
 end
 
