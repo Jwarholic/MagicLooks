@@ -2,9 +2,9 @@ module WeatherHelper
 
 	def self.weather
 		#Get location of the IP user
-		response = HTTParty.get("http://ip-api.com/json")
-		lon = response["lon"]
-		lat = response["lat"]
+		# response = HTTParty.get("http://ip-api.com/json")
+		# lon = response["lon"]
+		# lat = response["lat"]
 
 		key = "0b00512afd38eb31d828e615774a2fd4"
 		#Call the weather api for the results.
@@ -82,7 +82,8 @@ end
   #Weather temp
   def self.weathertemp
     #Converts Kelvin to Degrees / Rounds the number. 
-		(1.8 * (weather["main"]["temp"] - 273) + 32).ceil
+		temp = (1.8 * (weather["main"]["temp"] - 273)) + 32
+    temp.ceil
   end
 
   #weather description
