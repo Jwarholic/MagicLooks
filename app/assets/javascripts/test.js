@@ -1,18 +1,28 @@
 $(document).ready( function() {
   var loggedIn = false;
-  
-  var logInCheck = function() {
-    $.ajax({
-      url: "/users/#{current_user}/mirrors/#{session[:mirror_id]}",
+
+  $.ajax({
+      url: "/mirrors",
       method: 'get',
       dataType: 'json'
     })
     .done(function(response) {
-      // var textResponse = $(response).text();
+      var mirror = response;
+    })
+
+  var logInCheck = function() {
+    $.ajax({
+      url: "/users/2/mirrors/2",
+      method: 'get'
+    })
+    .done(function(response) {
+      var textResponse = $(response).text();
+
       console.log(response);
-      // if (textResponse !==  "nobody by the mirror") {
-      //   loggedIn = true;
-      // };
+      console.log('hs');
+      if (textResponse !==  undefined) {
+        loggedIn = true;
+      };
     })
     .error(function() {
       console.log('error');
