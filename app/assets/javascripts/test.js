@@ -90,6 +90,6 @@ $(document).ready( function() {
   setInterval(function() {
     logInCheck();
     // console.log('its working');
-  }, 2000);
+  }, 800);
 
 });
