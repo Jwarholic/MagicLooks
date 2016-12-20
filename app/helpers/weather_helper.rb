@@ -24,9 +24,7 @@ module WeatherHelper
     #800 clear DONE
     #801-804 clouds DONE
     #900-999 extreme DONE
-    p "*" * 50
-    p weather
-    p "*" * 50
+    
     id = weather["weather"][0]["id"]
     if id > 800 && id < 805 || id >= 700 && id < 800
         return "<div class='icon cloudy'>
