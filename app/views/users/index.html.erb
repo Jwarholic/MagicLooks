@@ -5,20 +5,38 @@
   <%= javascript_include_tag 'weather.js' %>
 <% end %>
 </head>
-<body id='mirror'>
 
-	<div id='mirror'>
-	<!-- Displays The Temp for the weather -->
+<body id='mirror'>
+<div class='home-page'>
 	
-	<%= @temp %> degrees
-	<img src=<%= @image %> id="weather-icon">
-	<br>
-	<!-- Displays the desc -->
-	<%= @weatherdesc %> today.
+	<div id='header'>
 	</div>
+
+	<div id='mirror-temp'>
+		<%= @weatherloc %>
+		<p id="one"><%= @temp %>°
+		</p>
+	</div>
+
+	<div id='weather-icon'>
+		<img src=<%= @image %> ">
+		<%= @weatherdesc %>
+	</div>
+	<!-- <div id='weather-desc'>
+	<%= @weatherdesc %>
+	</div> -->
 	<div id="clockbox">
-		
 	</div>
+<div>
+
+<div id="ajax-container">
+News:
+	<p>
+		<marquee behavior="scroll" direction="left"><%= @titles %></marquee>
+	</p>
+</div>
+
+</div>
 
 </body>
 </html>

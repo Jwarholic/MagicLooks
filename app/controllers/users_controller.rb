@@ -6,11 +6,21 @@ class UsersController < ApplicationController
       @image = WeatherHelper.weatherimage
       @temp = WeatherHelper.weathertemp
       @weatherdesc = WeatherHelper.weatherdesc
+      @weatherloc = WeatherHelper.weatherlocation
 
-
-
+      @titles = NewsHelper.titles
     end
 
+
+    def show
+      @user = User.find(params[:id])
+      if correct_user
+        render 'show'
+      else
+        redirect_to '/'
+      end
+    end
+    
     def new
       @user = User.new
     end
@@ -24,15 +34,6 @@ class UsersController < ApplicationController
       else
         #Redirect to the home page if the user is incorrect.
         redirect_to root_path
-      end
-    end
-
-    def show
-      @user = User.find(params[:id])
-      if correct_user
-        render 'show'
-      else
-        redirect_to '/'
       end
     end
 
@@ -66,7 +67,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :link, :password, :password_confirmation)
   end
   
 end
