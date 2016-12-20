@@ -91,7 +91,7 @@ class MirrorsController < ApplicationController
       @mirror.update(person_id: nil)
 
       respond_to do |format|
-       format.html { render json: { response: 'success' } }
+       format.html { render json: { status: 'successful' } }
       end
 
     end
