@@ -3,6 +3,8 @@ $(document).ready( function() {
   var mirrorId = undefined;
   var ownerId = undefined;
 
+ $('.home-page').toggle();
+
 //   $.ajax({
 //       url: "/mirrors",
 //       method: 'get',
@@ -65,20 +67,14 @@ $(document).ready( function() {
     .done(function(response) {
 
       var res = JSON.parse(response)
-      console.log("resp:",res.status);
-
-      // response["status"] && loggedIn ? $('#header').html('Hello ' + response["user_name"]) : $('#header').empty()
-      // console.log(response["user_name"]);
 
       if ( loggedIn != res.status ) {
         
         $('#header').empty()
         $('.home-page').toggle();
         if (res.status != "false"){
-          console.log(res.user_name)
               $('#header').html('Hello ' + res.user_name);
         }
-        // console.log(response["user_name"]);
         loggedIn = res.status;
       };
     })
@@ -89,7 +85,6 @@ $(document).ready( function() {
 
   setInterval(function() {
     logInCheck();
-    // console.log('its working');
   }, 800);
 
 });

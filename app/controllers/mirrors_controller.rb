@@ -1,9 +1,6 @@
 class MirrorsController < ApplicationController
 
     def index
-      # User.all.each do |u|
-      #   @person_ids[u.person_id] = u.id
-      # end
       @mirror = Mirror.find(session[:mirror_id])
 
       respond_to do |f|
@@ -13,10 +10,8 @@ class MirrorsController < ApplicationController
 
     def show
       @mirror = Mirror.find(session[:mirror_id])
-      # p @mirror.person_id
       if @mirror.person_id != nil
           @user = User.find_by(person_id: @mirror.person_id)
-          p "*" * 80
           p @user.name
           status = "true"
           respond_to do |f|
@@ -25,13 +20,9 @@ class MirrorsController < ApplicationController
       else
             status = "false"
             respond_to do |f|
-            f.html { render json: { status: status } }
+                f.html { render json: { status: status } }
+            end
       end
-    end
-
-      # p @user
-      # user_name = @user.name
-     
     end
 
     def new
@@ -91,7 +82,7 @@ class MirrorsController < ApplicationController
       @mirror.update(person_id: nil)
 
       respond_to do |format|
-       format.html { render json: { response: 'success' } }
+       format.html { render json: { status: 'successful' } }
       end
 
     end
