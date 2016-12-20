@@ -1,19 +1,8 @@
-<<<<<<< HEAD
-// $(document).ready( function() {
-//   var loggedIn = 'false';
-//   var mirrorId = undefined;
-//   var userId = undefined;
-=======
 $(document).ready( function() {
   var loggedIn = 'false';
   var mirrorId = undefined;
   var ownerId = undefined;
->>>>>>> f74bef8687bbefc9f9ddbbafd33338eb4f658505
 
-//   $('.home-page').hide();
-  
-
-<<<<<<< HEAD
 //   $.ajax({
 //       url: "/mirrors",
 //       method: 'get',
@@ -55,7 +44,6 @@ $(document).ready( function() {
 //   }, 200);
 
 // });
-=======
   $.ajax({
       url: "/mirrors",
       method: 'get',
@@ -105,4 +93,3 @@ $(document).ready( function() {
   }, 2000);
 
 });
->>>>>>> f74bef8687bbefc9f9ddbbafd33338eb4f658505
