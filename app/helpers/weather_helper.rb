@@ -99,7 +99,7 @@ end
       uri = URI.parse("http://quotes.rest/quote/search.json?category=#{category_name}")
 
       request = Net::HTTP::Get.new(uri)
-      request["X-Theysaidso-Api-Secret"] = "F5EKHhzShg1HED9cvzyvTAeF"
+      request["X-Theysaidso-Api-Secret"] = ENV['QUOTES']
       response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https") do |http|
         http.request(request)
       end
