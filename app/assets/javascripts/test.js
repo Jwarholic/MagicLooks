@@ -1,5 +1,10 @@
 $(document).ready( function() {
-  var loggedIn = false;
+  var loggedIn = 'false';
+  var mirrorId = undefined;
+  var userId = undefined;
+  var userName = undefined;
+
+  $('.home-page').toggle();
 
   $.ajax({
       url: "/mirrors",
@@ -7,21 +12,25 @@ $(document).ready( function() {
       dataType: 'json'
     })
     .done(function(response) {
-      var mirror = response;
+      mirrorId = response['mirror_id'];
+      userId = response['user_id'];
+      userName = response['user_name'];
     })
 
   var logInCheck = function() {
     $.ajax({
-      url: "/users/2/mirrors/2",
+      url: "/users/" + userId + "/mirrors/" + mirrorId,
       method: 'get'
     })
     .done(function(response) {
-      var textResponse = $(response).text();
 
-      console.log(response);
-      console.log('hs');
-      if (textResponse !==  undefined) {
-        loggedIn = true;
+      console.log("resp:",response);
+
+      if ( loggedIn != response ) {
+        $('.home-page').toggle();
+        console.log(userName);
+        $('#header').append('Hello ' + userName);
+        loggedIn = response;
       };
     })
     .error(function() {
@@ -29,10 +38,10 @@ $(document).ready( function() {
     })
   };
 
-  // setInterval(function() {
-    // logInCheck();
+  setInterval(function() {
+    logInCheck();
     console.log('its working');
-  // }, 2000);
+  }, 2000);
 
 });
 

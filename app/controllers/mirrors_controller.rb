@@ -4,26 +4,20 @@ class MirrorsController < ApplicationController
       # User.all.each do |u|
       #   @person_ids[u.person_id] = u.id
       # end
-
+      @mirror = Mirror.find(session[:mirror_id])
+      @user = User.find_by(person_id: @mirror.person_id)
+      p @user
       respond_to do |f|
-        f.html { render json: session[:mirror_id] }
+        f.html { render json: { mirror_id: session[:mirror_id], user_id: @mirror.owner_id, user_name: @user.name } }
       end
     end
 
     def show
-      # @mirror = Mirror.find(params[:id])
-      # @user = User.find(params[:id])
-
-      @person_ids = {}
-
-      User.all.each do |u|
-        @person_ids[u.person_id] = u.id
-      end
-
+      @mirror = Mirror.find(session[:mirror_id])
+      status = @mirror.person_id ? "true" : "false"
       respond_to do |f|
-        f.html { render  json: @person_ids }
+        f.html { render json: status}
       end
-
     end
 
     def new
