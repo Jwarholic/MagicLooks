@@ -7,7 +7,7 @@ class UsersController < ApplicationController
       @temp = WeatherHelper.weathertemp
       @weatherdesc = WeatherHelper.weatherdesc
       @weatherloc = WeatherHelper.weatherlocation
-
+      @quote = WeatherHelper.quote("happy")
       @titles = NewsHelper.titles
     end
 

@@ -95,4 +95,17 @@ end
     weather["name"]
   end
 
+  def self.quote(category_name)
+      # https://theysaidso.com/api/#qodcat <<for full list of calls
+      # uri = URI.parse("http://quotes.rest/quote.json?category=#{category_name}")
+      uri = URI.parse("http://quotes.rest/quote/search.json?category=#{category_name}")
+
+      request = Net::HTTP::Get.new(uri)
+      request["X-Theysaidso-Api-Secret"] = "F5EKHhzShg1HED9cvzyvTAeF"
+      response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https") do |http|
+        http.request(request)
+      end
+      JSON.parse(response.body)['contents']['quote']
+  end
+
 end
