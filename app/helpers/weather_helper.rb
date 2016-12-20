@@ -18,14 +18,13 @@ module WeatherHelper
     #300-499 drizzle DONE
     #500-550 rain DONE
     #600-630 snow DONE
-    #700-799 atmosphere DONE
+    #700-799 atmosphere DONE ON DEFAULT.
     #800 clear DONE
     #801-804 clouds DONE
     #900-999 extreme DONE
   
     id = weather["weather"][0]["id"]
-
-    if id > 800 && id < 805
+    if id > 800 && id < 805 || id >= 700 && id < 800
         return "<div class='icon cloudy'>
                  <div class='cloud'></div>
                  <div class='cloud'></div>
