@@ -6,6 +6,8 @@ module WeatherHelper
 		# lon = response["lon"]
 		# lat = response["lat"]
     key = ENV['WEATHER']
+
+
 		#Call the weather api for the results.
     # weather = "http://api.openweathermap.org/data/2.5/weather?q=sanfrancisco&appid=0b00512afd38eb31d828e615774a2fd4&units=imperial"
 		weather = "http://api.openweathermap.org/data/2.5/weather?lat=37.77&lon=-122.42&appid=#{key}&units=imperial"
@@ -22,7 +24,9 @@ module WeatherHelper
     #800 clear DONE
     #801-804 clouds DONE
     #900-999 extreme DONE
-  
+    p "*" * 50
+    p weather
+    p "*" * 50
     id = weather["weather"][0]["id"]
     if id > 800 && id < 805 || id >= 700 && id < 800
         return "<div class='icon cloudy'>
