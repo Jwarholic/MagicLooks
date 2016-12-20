@@ -5,33 +5,40 @@
   <%= javascript_include_tag 'weather.js' %>
 <% end %>
 </head>
+<body id='mirror' style='color: white'>
+<div class='home-page'>
+
+	<div id='header'>
+		Hello Crazy
+		
+	</div>
+
+	<div id='quote'>
+		<marquee behavior="scroll" direction="left"><%= @quote %></marquee>
 
 <body id='mirror'>
-<div class='home-page'>
 	
 	<div id='header'>
+
 	</div>
 
 	<div id='mirror-temp'>
 		<%= @weatherloc %>
+		<br>
+		<%= @weatherdesc %>
 		<p id="one"><%= @temp %>°
 		</p>
 	</div>
 
-	<div id='weather-icon'>
-		<img src=<%= @image %> ">
-		<%= @weatherdesc %>
+	<div id='weather-icon' style="color: black;">
+		<div id='icon'><%= @image.html_safe %></div>
 	</div>
-	<!-- <div id='weather-desc'>
-	<%= @weatherdesc %>
-	</div> -->
+
 	<div id="clockbox">
 	</div>
-<div>
 
-<div id="ajax-container">
-News:
-	<p>
+	<div id="ajax-container">
+		<p>
 		<marquee behavior="scroll" direction="left"><%= @titles %></marquee>
 	</p>
 </div>
