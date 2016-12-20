@@ -5,7 +5,7 @@ module WeatherHelper
 		response = HTTParty.get("http://ip-api.com/json")
 		# lon = response["lon"]
 		# lat = response["lat"]
-		key = "0b00512afd38eb31d828e615774a2fd4"
+    key = ENV['WEATHER']
 		#Call the weather api for the results.
     # weather = "http://api.openweathermap.org/data/2.5/weather?q=sanfrancisco&appid=0b00512afd38eb31d828e615774a2fd4&units=imperial"
 		weather = "http://api.openweathermap.org/data/2.5/weather?lat=37.77&lon=-122.42&appid=#{key}&units=imperial"
@@ -18,14 +18,13 @@ module WeatherHelper
     #300-499 drizzle DONE
     #500-550 rain DONE
     #600-630 snow DONE
-    #700-799 atmosphere DONE
+    #700-799 atmosphere DONE ON DEFAULT.
     #800 clear DONE
     #801-804 clouds DONE
     #900-999 extreme DONE
   
     id = weather["weather"][0]["id"]
-
-    if id > 800 && id < 805
+    if id > 800 && id < 805 || id >= 700 && id < 800
         return "<div class='icon cloudy'>
                  <div class='cloud'></div>
                  <div class='cloud'></div>
@@ -100,7 +99,7 @@ end
       uri = URI.parse("http://quotes.rest/quote/search.json?category=#{category_name}")
 
       request = Net::HTTP::Get.new(uri)
-      request["X-Theysaidso-Api-Secret"] = "F5EKHhzShg1HED9cvzyvTAeF"
+      request["X-Theysaidso-Api-Secret"] = ENV['QUOTES']
       response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https") do |http|
         http.request(request)
       end

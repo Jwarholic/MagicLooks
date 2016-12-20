@@ -52,6 +52,9 @@ GEM
     coffee-script-source (1.11.1)
     concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
+    dotenv (2.0.1)
+    dotenv-rails (2.0.1)
+      dotenv (= 2.0.1)
     dropbox-api (0.4.7)
       hashie (~> 3.4.0)
       multi_json (~> 1.10)
@@ -178,6 +181,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   byebug
   coffee-rails (~> 4.2)
+  dotenv-rails (~> 2.0.1)
   dropbox-api
   dropbox-sdk
   faker
