@@ -6,7 +6,6 @@ module WeatherHelper
 		# lon = response["lon"]
 		# lat = response["lat"]
     key = ENV['WEATHER']
-		key = "0b00512afd38eb31d828e615774a2fd4"
 		#Call the weather api for the results.
     # weather = "http://api.openweathermap.org/data/2.5/weather?q=sanfrancisco&appid=0b00512afd38eb31d828e615774a2fd4&units=imperial"
 		weather = "http://api.openweathermap.org/data/2.5/weather?lat=37.77&lon=-122.42&appid=#{key}&units=imperial"
