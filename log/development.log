@@ -327,3 +327,565 @@ Processing by MirrorsSessionsController#new as HTML
 Completed 200 OK in 46ms (Views: 43.8ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/mirrors_sessions/new" for ::1 at 2016-12-19 15:46:10 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MirrorsSessionsController#new as HTML
+  Rendering mirrors_sessions/new.html.erb within layouts/application
+  Rendered mirrors_sessions/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 225ms (Views: 215.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/mirrors_sessions" for ::1 at 2016-12-19 15:46:14 -0800
+Processing by MirrorsSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jYKKEhZNW5S6LFJlCoPjYRh7EmtqrxwUc699J5S44utSDcgtvixq8SfZwLH2GwCeGV+HVlOvoDnHqikvNDhH1Q==", "email"=>"d@d.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mMirror Load (0.3ms)[0m  [1m[34mSELECT  "mirrors".* FROM "mirrors" WHERE "mirrors"."email" = $1 LIMIT $2[0m  [["email", "d@d.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/mirrors/1
+Completed 302 Found in 111ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/mirrors/1" for ::1 at 2016-12-19 15:46:14 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/mirrors_sessions/new" for ::1 at 2016-12-19 15:50:07 -0800
+Processing by MirrorsSessionsController#new as HTML
+  Rendering mirrors_sessions/new.html.erb within layouts/application
+  Rendered mirrors_sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/mirrors_sessions" for ::1 at 2016-12-19 15:50:09 -0800
+Processing by MirrorsSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iNbNs5d1cDX5d0R5lyJAgZM4AoSjGgFPRlL/wSmB37lXWY+MPxRBUGSC1q1ruqN+khyXuZoavWLyV6vJiQF6hw==", "email"=>"d@d.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mMirror Load (0.3ms)[0m  [1m[34mSELECT  "mirrors".* FROM "mirrors" WHERE "mirrors"."email" = $1 LIMIT $2[0m  [["email", "d@d.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/mirrors/1
+Completed 302 Found in 91ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/mirrors/1" for ::1 at 2016-12-19 15:50:09 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mirrors/1" for ::1 at 2016-12-19 16:03:30 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MirrorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 31ms (Views: 0.4ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/users/mirrors" for ::1 at 2016-12-19 16:05:28 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"mirrors"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 25ms (ActiveRecord: 3.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=mirrors):
+  
+app/controllers/users_controller.rb:16:in `show'
+  Rendering /Users/collinshelby/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/collinshelby/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/collinshelby/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.4ms)
+  Rendering /Users/collinshelby/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/collinshelby/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/collinshelby/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/collinshelby/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/collinshelby/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (64.0ms)
+Started GET "/users" for ::1 at 2016-12-19 16:05:45 -0800
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (226.7ms)
+Completed 200 OK in 1976ms (Views: 328.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2016-12-19 16:05:50 -0800
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 1415ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1/mirrors" for ::1 at 2016-12-19 16:06:07 -0800
+Processing by MirrorsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering mirrors/index.html.erb within layouts/application
+  Rendered mirrors/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 41ms (Views: 40.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1/mirrors" for ::1 at 2016-12-19 16:06:10 -0800
+Processing by MirrorsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering mirrors/index.html.erb within layouts/application
+  Rendered mirrors/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1/mirrors/1" for ::1 at 2016-12-19 16:06:12 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/1/mirrors/1" for ::1 at 2016-12-19 16:06:14 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1/mirrors/1" for ::1 at 2016-12-19 16:06:15 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mirrors_sessions/new" for ::1 at 2016-12-19 16:06:23 -0800
+Processing by MirrorsSessionsController#new as HTML
+  Rendering mirrors_sessions/new.html.erb within layouts/application
+  Rendered mirrors_sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/mirrors_sessions" for ::1 at 2016-12-19 16:06:30 -0800
+Processing by MirrorsSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dOxKU/D8uA8cDasjgV9kqTvTlfAC8YiTZIHVHbqz1S6rYwhsWJ2JaoH4Ofd9x4dWOvcAzTvxNL7QhIEVGjNwEA==", "email"=>"d@d.com", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mMirror Load (0.3ms)[0m  [1m[34mSELECT  "mirrors".* FROM "mirrors" WHERE "mirrors"."email" = $1 LIMIT $2[0m  [["email", "d@d.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/mirrors/1
+Completed 302 Found in 90ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/mirrors/1" for ::1 at 2016-12-19 16:06:30 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mirrors/1" for ::1 at 2016-12-19 16:06:34 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mirrors/1" for ::1 at 2016-12-19 16:07:28 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mirrors/1" for ::1 at 2016-12-19 16:07:30 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/mirrors/1" for ::1 at 2016-12-19 16:07:30 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/mirrors/1" for ::1 at 2016-12-19 16:08:20 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mirrors" for ::1 at 2016-12-19 16:09:42 -0800
+Processing by MirrorsController#index as HTML
+  Rendering mirrors/index.html.erb within layouts/application
+  Rendered mirrors/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 86ms (Views: 84.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mirrors" for ::1 at 2016-12-19 16:09:42 -0800
+Processing by MirrorsController#index as JSON
+  Rendering mirrors/index.html.erb within layouts/application
+  Rendered mirrors/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 35ms (Views: 26.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mirrors" for ::1 at 2016-12-19 16:10:22 -0800
+Processing by MirrorsController#index as HTML
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mirrors" for ::1 at 2016-12-19 16:10:25 -0800
+Processing by MirrorsController#index as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mirrors" for ::1 at 2016-12-19 16:10:34 -0800
+Processing by MirrorsController#index as HTML
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-12-19 16:10:42 -0800
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 2016ms (Views: 26.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mirrors" for ::1 at 2016-12-19 16:10:44 -0800
+Processing by MirrorsController#index as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mirrors/1" for ::1 at 2016-12-19 16:11:58 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mirrors/1" for ::1 at 2016-12-19 16:12:19 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mirrors/1" for ::1 at 2016-12-19 16:12:21 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mirrors/1" for ::1 at 2016-12-19 16:12:50 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mirrors/1" for ::1 at 2016-12-19 16:12:51 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mirrors/1" for ::1 at 2016-12-19 16:13:14 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mirrors/1" for ::1 at 2016-12-19 16:13:15 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mirrors/1" for ::1 at 2016-12-19 16:14:52 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mirrors/1" for ::1 at 2016-12-19 16:14:53 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mirrors/1" for ::1 at 2016-12-19 16:15:03 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mirrors/1" for ::1 at 2016-12-19 16:15:14 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mirrors/1" for ::1 at 2016-12-19 16:15:15 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mirrors" for ::1 at 2016-12-19 16:15:19 -0800
+Processing by MirrorsController#index as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mirrors" for ::1 at 2016-12-19 16:15:20 -0800
+Processing by MirrorsController#index as HTML
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-12-19 16:15:23 -0800
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 2852ms (Views: 82.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mirrors" for ::1 at 2016-12-19 16:15:26 -0800
+Processing by MirrorsController#index as JSON
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mirrors/1" for ::1 at 2016-12-19 16:15:33 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mirrors/1" for ::1 at 2016-12-19 16:16:37 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mirrors/1" for ::1 at 2016-12-19 16:16:51 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mirrors/1" for ::1 at 2016-12-19 16:16:51 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mirrors/1" for ::1 at 2016-12-19 16:16:52 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mirrors/1" for ::1 at 2016-12-19 16:17:24 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mirrors/1" for ::1 at 2016-12-19 16:17:25 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mirrors/1" for ::1 at 2016-12-19 16:17:26 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1mirrors/1" for ::1 at 2016-12-19 16:35:04 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/users/1mirrors/1"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/collinshelby/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/collinshelby/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/collinshelby/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered collection of /Users/collinshelby/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [31 times] (8.4ms)
+  Rendered /Users/collinshelby/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (6.3ms)
+  Rendering /Users/collinshelby/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/collinshelby/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/collinshelby/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (91.9ms)
+Started GET "/users/1/mirrors/1" for ::1 at 2016-12-19 16:35:11 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/mirrors/1" for ::1 at 2016-12-19 16:35:19 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2/mirrors/1" for ::1 at 2016-12-19 16:35:24 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"user_id"=>"2", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2/mirrors/2" for ::1 at 2016-12-19 16:35:26 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"user_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2/mirrors/2" for ::1 at 2016-12-19 16:36:00 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"user_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2/mirrors/2" for ::1 at 2016-12-19 16:36:01 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"user_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2/mirrors/2" for ::1 at 2016-12-19 16:36:03 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"user_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2/mirrors/2" for ::1 at 2016-12-19 16:36:04 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"user_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2/mirrors/2" for ::1 at 2016-12-19 16:36:11 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"user_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/mirrors/2" for ::1 at 2016-12-19 16:36:15 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/mirrors/2" for ::1 at 2016-12-19 16:36:16 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/mirrors/1" for ::1 at 2016-12-19 16:36:20 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1/mirrors/1" for ::1 at 2016-12-19 16:36:22 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/mirrors/1" for ::1 at 2016-12-19 16:36:23 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/mirrors/1" for ::1 at 2016-12-19 16:36:41 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2/mirrors/1" for ::1 at 2016-12-19 16:36:44 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"user_id"=>"2", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2/mirrors/2" for ::1 at 2016-12-19 16:36:46 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"user_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2/mirrors/2" for ::1 at 2016-12-19 16:36:50 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"user_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2/mirrors/2" for ::1 at 2016-12-19 16:37:52 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"user_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2/mirrors/2" for ::1 at 2016-12-19 16:40:05 -0800
+Processing by MirrorsController#show as HTML
+  Parameters: {"user_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+

@@ -1,14 +1,13 @@
 class MirrorsController < ApplicationController
 
     def index
-
       # User.all.each do |u|
       #   @person_ids[u.person_id] = u.id
       # end
 
-      # respond_to do |f|
-      #   f.html { render json: @person_ids }
-      # end
+      respond_to do |f|
+        f.html { render json: session[:mirror_id] }
+      end
     end
 
     def show
