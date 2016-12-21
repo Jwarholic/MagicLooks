@@ -4,17 +4,18 @@ $(document).ready( function() {
   var ownerId = undefined;
 
  $('.home-page').toggle();
+
   $.ajax({
       url: "/mirrors",
       method: 'get',
       dataType: 'json'
     })
     .done(function(response) {
-      console.log(response);
       mirrorId = response['mirror_id'];
-      ownerId = response['user_id'];
-    }).fail(function(){
-      console.log("its fails!!!!")
+      ownerId = response['owner_id'];
+    })
+    .fail(function(err){
+      console.log(err);
     })
 
   var logInCheck = function() {
@@ -23,7 +24,6 @@ $(document).ready( function() {
       method: 'get'
     })
     .done(function(response) {
-
       var res = JSON.parse(response)
       if ( loggedIn != res.status ) {
         
@@ -41,9 +41,7 @@ $(document).ready( function() {
       console.log('error');
     })
   };
-
   setInterval(function() {
     logInCheck();
   }, 800);
-
 });
