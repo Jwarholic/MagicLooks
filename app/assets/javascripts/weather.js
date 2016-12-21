@@ -27,13 +27,13 @@ function GetClock() {
 var header = document.getElementById('header')
 
 
-window.onload = function() {
-    GetClock();
-    console.log(header)
-    setInterval(GetClock, 1000);
-    var header = document.getElementById('header');
-    var msg = new SpeechSynthesisUtterance($(header).text());
-    window.speechSynthesis.speak(msg);
-}
+// window.onload = function() {
+//     GetClock();
+//     console.log(header)
+//     setInterval(GetClock, 1000);
+//     var header = document.getElementById('header');
+//     var msg = new SpeechSynthesisUtterance($(header).text());
+//     window.speechSynthesis.speak(msg);
+// }
 
 

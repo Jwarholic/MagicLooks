@@ -74,6 +74,8 @@ $(document).ready( function() {
         $('.home-page').toggle();
         if (res.status != "false"){
               $('#header').html('Hello ' + res.user_name);
+              var msg = new SpeechSynthesisUtterance("Hello" + res.user_name);
+              window.speechSynthesis.speak(msg);
         }
         loggedIn = res.status;
       };
