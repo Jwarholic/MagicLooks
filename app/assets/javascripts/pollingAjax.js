@@ -35,6 +35,9 @@ $(document).ready( function() {
               window.speechSynthesis.speak(msg);
         }
         loggedIn = res.status;
+        var header = document.getElementById('header');
+        var msg = new SpeechSynthesisUtterance($(header).text());
+        window.speechSynthesis.speak(msg);
       };
     })
     .error(function() {

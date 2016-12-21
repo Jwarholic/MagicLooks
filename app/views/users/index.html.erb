@@ -1,45 +1,44 @@
 <html>
 <head>
 	<title>Mirror</title>
+	<% content_for(:head) do %>
+  <%= javascript_include_tag 'weather.js' %>
+<% end %>
 </head>
 <body id='mirror' style="color: white; length: 50%;">
+<div class='home-page'>
 
-	<div class='home-page'>
-
-			<div id='header'>
-			</div>
-
-			<div id='quote'>
-				<marquee behavior="scroll" direction="left" scrollamount="20"><%= @quote %></marquee>
-			</div>
-
-			<div id='mirror-temp'>
-				<%= @temp %>°
-				<br>
-				<div id='weather-details'>
-					<%= @weatherdesc %>
-					<br>
-					<%= @weatherloc %>
-				</div>
-			</div>
-
-			<div id='weather-icon' style="color: black;">
-				<div id='icon'><%= @image.html_safe %></div>
-			</div>
-
-			<div id="clockbox">
-			</div>
-
-			<div id='date'>
-				<%= Time.now.strftime("%A, %b, %d, %Y") %>
-			</div>
-
-			<div id="ajax-container">
-				<p>
-					<marquee behavior="scroll" direction="left" scrollamount="20"><%= @titles %></marquee>
-				</p>
-		</div>
+	<div id="header">
 	</div>
-  <%= javascript_include_tag 'weather.js' %>
+
+	<div id=''ajax-container">
+	<p><marquee behavior="scroll" direction="right"><%= @quote %></marquee></p>
+		
+	</div>
+
+	<div id='mirror-temp'>
+		<%= @weatherloc %>
+		<br>
+		<%= @weatherdesc %>
+		<p id="one"><%= @temp %>°
+		</p>
+	</div>
+
+	<div id='weather-icon' style="color: black;">
+		<div id='icon'><%= @image.html_safe %></div>
+	</div>
+
+	<div id="clockbox">
+	
+	</div>
+
+	<div id="ajax-container">
+		<p>
+		<marquee behavior="scroll" direction="left"><%= @titles %></marquee>
+	</p>
+</div>
+
+
+
 </body>
 </html>
