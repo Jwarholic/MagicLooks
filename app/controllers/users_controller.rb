@@ -14,7 +14,6 @@ class UsersController < ApplicationController
 
     def show
       @user = User.find(params[:id])
-      @mirrors = @user.owned_mirrors
       
       if correct_user
          respond_to do |f|

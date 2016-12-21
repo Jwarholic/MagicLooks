@@ -4,8 +4,10 @@
 Hello <%= @user.name.capitalize %>.
 
 <%= link_to 'New Mirror', new_mirror_path, class: 'new-mirror', remote: true %>
-<div class='new-mirror'>
-  <%= link_to 'New Mirror User', users_mirrors_path(@path),action: 'index', remote: true %>
+
+<div class='user-mirrors'>
+  
+<%= link_to 'New Mirror User', user_mirrors_path, class: 'mirrors-link', remote: true %>
 </div>
 
 <div class='new-mirrors'></div>
