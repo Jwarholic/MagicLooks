@@ -1,4 +1,4 @@
-<% if current_user %>
+<% if @current_user %>
 
 
 	<nav class="navbar navbar-inverse">
@@ -7,7 +7,7 @@
 	 <%= link_to "Magic Looks", root_path, class: "navbar-brand" %>	
 	    </div>
 	    <ul class="nav navbar-nav">
-	    <li><%= link_to "Profile", user_path(current_user.id) %>
+	    <li><%= link_to "Profile", user_path(@current_user) %>
 	</li>
 	    <li><%= link_to "Logout User", '/logout/users' %></li>
       <li><%= link_to "Logout Mirror", '/logout/mirrors' %></li>

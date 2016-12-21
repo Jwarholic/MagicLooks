@@ -15,8 +15,12 @@ class UsersController < ApplicationController
     def show
       @user = User.find(params[:id])
       @mirrors = @user.owned_mirrors
+      
       if correct_user
-        render 'show'
+         respond_to do |f|
+          f.html { render 'show' }
+          f.js {}
+        end
       else
         redirect_to '/'
       end
