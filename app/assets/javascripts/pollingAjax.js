@@ -31,6 +31,9 @@ $(document).ready( function() {
         $('.home-page').toggle();
               $('#header').html('Hello ' + res.user_name);
         loggedIn = res.status;
+        var header = document.getElementById('header');
+        var msg = new SpeechSynthesisUtterance($(header).text());
+        window.speechSynthesis.speak(msg);
       };
 
     })
