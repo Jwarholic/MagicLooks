@@ -45,4 +45,4 @@ window.onload = function() {
     var header = document.getElementById('header');
     var msg = new SpeechSynthesisUtterance($(header).text());
     window.speechSynthesis.speak(msg);
-};
+

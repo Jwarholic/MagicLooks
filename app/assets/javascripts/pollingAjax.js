@@ -43,5 +43,3 @@ $(document).ready( function() {
   setInterval(function() {
     logInCheck();
   }, 800);
-
-});
