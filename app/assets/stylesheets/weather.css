@@ -20,7 +20,7 @@
 	position: absolute;
 	display : block;
 	height: 25%;
-	width: 33%;
+	width: 2%;
 	margin-top: 33vh;
 	margin-left: 33%;
 	font-size: 30px;
@@ -82,7 +82,7 @@
 
 #ajax-container p {
 	text-align: center;
-	line-height: 90px;
+	line-height: 110px;
 }
 
 .icon {
