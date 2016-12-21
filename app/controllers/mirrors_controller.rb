@@ -12,7 +12,6 @@ class MirrorsController < ApplicationController
       @mirror = Mirror.find(session[:mirror_id])
       if @mirror.person_id != nil
           @user = User.find_by(person_id: @mirror.person_id)
-          p @user.name
           status = "true"
           respond_to do |f|
               f.html { render json: { status: status, user_name: @user.name } }
@@ -57,8 +56,6 @@ class MirrorsController < ApplicationController
     end
 
     def update
-      # @user = User.find(params[:user_id])
-      # @person_id = @user.person_id
       @mirror = Mirror.find(params[:id])
       
         if @mirror.update(person_id: params[:personId])
@@ -71,10 +68,7 @@ class MirrorsController < ApplicationController
           f.html { render json: { status: 'unsuccessful' } }
         end
       end
-      
-      # @mirror.update(person_id: params[:person_id])
-      
-      # redirect_to user_mirror_path(@user, @mirror)
+
     end
 
     def destroy
