@@ -53,8 +53,12 @@ $(document).ready( function() {
     })
     .done(function(response) {
       console.log(response);
+  
       mirrorId = response['mirror_id'];
-      ownerId = response['user_id'];
+      ownerId = response['owner_id'];
+      console.log(ownerId)
+      console.log(mirrorId)
+
     }).fail(function(){
       console.log("its fails!!!!")
     })
@@ -65,16 +69,15 @@ $(document).ready( function() {
       method: 'get'
     })
     .done(function(response) {
-
+      console.log(ownerId)
       var res = JSON.parse(response)
-
       if ( loggedIn != res.status ) {
         
         $('#header').empty()
         $('.home-page').toggle();
-        if (res.status != "false"){
               $('#header').html('Hello ' + res.user_name);
-        }
+        // if (res.status != "false"){
+        // }
         loggedIn = res.status;
       };
     })
