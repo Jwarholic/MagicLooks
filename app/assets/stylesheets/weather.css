@@ -3,6 +3,10 @@
 	font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
 }
 
+#quote {
+	font-size: 13vh;
+}
+
 #header {
 /*	border-style: solid;
 	border-width: 3px;*/

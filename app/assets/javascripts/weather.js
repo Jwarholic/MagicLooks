@@ -28,12 +28,19 @@ var header = document.getElementById('header')
 
 
 window.onload = function() {
+    $('#quote').hide();
     GetClock();
-    console.log(header)
     setInterval(GetClock, 1000);
     var header = document.getElementById('header');
     var msg = new SpeechSynthesisUtterance($(header).text());
+    console.log(header);
     window.speechSynthesis.speak(msg);
+    //Hide the name
+    // Show the quote
+    setTimeout(function() {
+    $('#header').fadeOut('fast');
+    $('#quote').show();
+}, 5000); // <-- time in milliseconds
 }
 
 

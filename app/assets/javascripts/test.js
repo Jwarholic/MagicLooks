@@ -76,6 +76,9 @@ $(document).ready( function() {
         $('#header').empty()
         $('.home-page').toggle();
               $('#header').html('Hello ' + res.user_name);
+        var header = document.getElementById('header');
+        var msg = new SpeechSynthesisUtterance($(header).text());
+        window.speechSynthesis.speak(msg);
         // if (res.status != "false"){
         // }
         loggedIn = res.status;
