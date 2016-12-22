@@ -35,8 +35,6 @@ function GetClock() {
     document.getElementById('clockbox').innerHTML = nhour + ":" + nmin + ":" + nsec + ap + "";
 }
 
-var header = document.getElementById('header');
-
 
 // window.onload = function() {
     // GetClock();
@@ -59,8 +57,12 @@ var header = document.getElementById('header');
  }, 5000); // <-- time in milliseconds
  }
 
-
-
-
+window.onload = function() {
+    GetClock();
+    console.log(header)
+    setInterval(GetClock, 1000);
+    // var header = document.getElementById('header');
+    // var msg = new SpeechSynthesisUtterance($(header).text());
+}
 
 
