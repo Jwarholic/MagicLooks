@@ -37,8 +37,6 @@ function GetClock() {
 
 var header = document.getElementById('header');
 
-    // var header = document.getElementById('header');
-    // var msg = new SpeechSynthesisUtterance($(header).text());
 // window.onload = function() {
     // GetClock();
     // console.log(header);
@@ -47,7 +45,6 @@ var header = document.getElementById('header');
     // var msg = new SpeechSynthesisUtterance($(header).text());
     // window.speechSynthesis.speak(msg);
 // };
-
  window.onload = function() {
       $('#quote').hide();
       GetClock();
