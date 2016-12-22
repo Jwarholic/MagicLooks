@@ -56,3 +56,4 @@ var header = document.getElementById('header');
      $('#quote').show();
  }, 5000); // <-- time in milliseconds
  }
+;

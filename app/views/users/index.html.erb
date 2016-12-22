@@ -1,6 +1,9 @@
 <html>
 <head>
 	<title>Mirror</title>
+	<% content_for(:head) do %>
+  <%= javascript_include_tag 'weather.js' %>
+<% end %>
 </head>
 <body id='mirror' style="color: white; length: 50%;">
 	<div class='home-page'>
@@ -39,6 +42,5 @@
 				</p>
 		</div>
 	</div>
-  <%= javascript_include_tag 'weather.js' %>
 </body>
 </html>

@@ -1,18 +1,19 @@
 module WeatherHelper
 
-	def self.weather
-		#Get location of the IP user
-		response = HTTParty.get("http://ip-api.com/json")
-		# lon = response["lon"]
-		# lat = response["lat"]
-    key = ENV['WEATHER']
+def self.weather
+        #Get location of the IP user
+        response = HTTParty.get("http://ip-api.com/json")
+        # lon = response["lon"]
+        # lat = response["lat"]
+        key = ENV['WEATHER']
 
 
-		#Call the weather api for the results.
-    # weather = "http://api.openweathermap.org/data/2.5/weather?q=sanfrancisco&appid=0b00512afd38eb31d828e615774a2fd4&units=imperial"
-		weather = "http://api.openweathermap.org/data/2.5/weather?lat=37.77&lon=-122.42&appid=#{key}&units=imperial"
-		results = HTTParty.get(weather)
-  end
+        #Call the weather api for the results.
+   # weather = "http://api.openweathermap.org/data/2.5/weather?q=sanfrancisco&appid=0b00512afd38eb31d828e615774a2fd4&units=imperial"
+        weather = "http://api.openweathermap.org/data/2.5/weather?lat=37.77&lon=-122.42&appid=#{key}&units=imperial"
+        results = HTTParty.get(weather)
+ end
+
 
   #GET THE ICON FOR THE CURRENT WEATHER.
   def self.weatherimage
@@ -25,51 +26,57 @@ module WeatherHelper
     #801-804 clouds DONE
     #900-999 extreme DONE
     
-    id = weather["weather"][0]["id"]
-    if id > 800 && id < 805 || id >= 700 && id < 800
-        return "<div class='icon cloudy'>
-                 <div class='cloud'></div>
-                 <div class='cloud'></div>
-               </div>"
+    weather_id = weather["weather"][0]["id"]
+    if weather_id > 800 && weather_id < 805 || weather_id >= 700 && weather_id < 800
+      return "
+        <div class='icon cloudy'>
+        <div class='cloud'></div>
+        <div class='cloud'></div>
+        </div>"
     #THUNDER
-    elsif id >= 200 && id < 300
-      return "<div class='icon thunder-storm'>
-                 <div class='cloud'></div>
-                 <div class='lightning'>
-                 <div class='bolt'></div>
-                 <div class='bolt'></div>
-            </div>
-            </div>"
+    elsif weather_id >= 200 && weather_id < 300
+      return "
+        <div class='icon thunder-storm'>
+        <div class='cloud'></div>
+        <div class='lightning'>
+        <div class='bolt'></div>
+        <div class='bolt'></div>
+        </div>
+        </div>"
     #DRIZZLE
-    elsif id >= 300 && id < 500
-         return "<div class='icon sun-shower'>
-      <div class='cloud'></div>
-      <div class='sun'>
+    elsif weather_id >= 300 && weather_id < 500
+      return "
+        <div class='icon sun-shower'>
+        <div class='cloud'></div>
+        <div class='sun'>
         <div class='rays'></div>
-      </div>
-      <div class='rain'></div>
-    </div>"
-  #RAIN
-    elsif id >= 500 && id < 551
-      return "<div class='icon rainy'>
+        </div>
+        <div class='rain'></div>
+        </div>"
+    #RAIN
+    elsif weather_id >= 500 && weather_id < 551
+      return "
+        <div class='icon rainy'>
         <div class='cloud'></div>
         <div class='rain'></div>
-      </div>"
-    elsif id >= 600 && id < 631
-      return "<div class='icon flurries'>
+        </div>"
+    elsif weather_id >= 600 && weather_id < 631
+      return "
+        <div class='icon flurries'>
         <div class='cloud'></div>
         <div class='snow'>
          <div class='flake'></div>
         <div class='flake'></div>
         </div>
-          </div>"
+        </div>"
     #SUNNY
-    elsif id == 800
-      return "<div class='icon sunny'>
+    elsif weather_id == 800
+      return "
+        <div class='icon sunny'>
         <div class='sun'>
         <div class='rays'></div>
-       </div>
-    </div>"
+        </div>
+        </div>"
     #WARNING
   else
   	icon = weather["weather"][0]["icon"]
@@ -80,10 +87,7 @@ end
 
   #Weather temp
   def self.weathertemp
-    #Converts Kelvin to Degrees / Rounds the number. 
-		# temp = 1.8 * (weather["main"]["temp"].to_i - 273) + 32
     weather["main"]["temp"].round(1)
-    # 1.8 x (K - 273) + 32
   end
 
   #weather description
@@ -96,8 +100,6 @@ end
   end
 
   def self.quote(category_name)
-      # https://theysaidso.com/api/#qodcat <<for full list of calls
-      # uri = URI.parse("http://quotes.rest/quote.json?category=#{category_name}")
       uri = URI.parse("http://quotes.rest/quote/search.json?category=#{category_name}")
 
       request = Net::HTTP::Get.new(uri)
