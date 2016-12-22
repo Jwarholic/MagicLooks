@@ -45,6 +45,7 @@ window.onload = function() {
         $('.home-page').toggle();
         if (res.status != "false"){
               $('#header').html('Hello ' + res.user_name);
+              $('#header').show()
               setTimeout(function() {
                 $('#header').fadeOut('fast');
                 $('#quote').show();
