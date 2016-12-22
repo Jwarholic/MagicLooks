@@ -134,9 +134,9 @@ User.create!( name: "Dana",
 							password: 'p',
 							person_id: '892bd49f-f753-46bf-9884-2159c0249172')
 
-Mirror.create!(person_id: nil, owner_id: 1, email: 'd@d.com', password:'p')
+Mirror.create!(name: 'living room', person_id: nil, owner_id: 1, email: 'd@d.com', password:'p')
 
-UserMirror.create(user_id: 1, mirror_id: 1)
+UserMirror.create(name: 'Dawit', user_id: 1, mirror_id: 1)
 
 
 
