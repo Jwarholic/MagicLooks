@@ -2,9 +2,7 @@ class UserMirrorsController < ApplicationController
 
   def index
     @user = User.find(session[:user_id])
-    p @user
     @mirror = Mirror.find(session[:mirror_id])
-    p @mirror
     @mirrors = @user.owned_mirrors
 
     respond_to do |f|
@@ -14,13 +12,11 @@ class UserMirrorsController < ApplicationController
   end
 
   def new
-    @user = User.new()
-    @user_mirror = UserMirror.new()
   end
 
   def create
-    @user = User.find_by(name: params[:name])
-    @mirror = Mirror.find(params[:id])
+    @user = User.find_by(name: params[:user_mirror][:name])
+    @mirror = Mirror.find(session[:mirror_id])
     @user_mirror = UserMirror.new(user_id: @user.id, mirror_id: @mirror.id)
 
     if @user_mirror.save
