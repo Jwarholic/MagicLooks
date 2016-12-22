@@ -1,6 +1,8 @@
+<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
 <body id="newform"
 <%= render 'partials/header' %>
- <h1>Signup!</h1>
 
 <% if @errors %>
 	<% @errors.each do |error| %>
@@ -9,39 +11,18 @@
 	<% end %>
 <% end %>
 
+ 
+<div id='form'>
+  <h1 id='h1'>Sign up for Magic Looks account.</h1>
+  <%= form_for @user do |f| %>
 
-<%= form_for @user do |f| %>
+    <p><%= f.text_field :name, id: 'input', placeholder: 'Name' %></p>
+    <p><%= f.text_field :email, id: 'input', placeholder: 'Email' %></p>
+    <p><%= f.text_field :link,  id: 'input', placeholder: 'Photo Link' %></p>
+    <p><%= f.password_field :password,  id: 'input', placeholder: 'Password' %></p>
+    <p><%= f.password_field :password_confirmation,  id: 'input', placeholder: 'Confirm Password' %></p>
+    <%= f.submit "Submit", id: 'usersubmit'  %>
 
-  <p>Name: <%= f.text_field :name %></p>
-  <p>Email: <%= f.text_field :email %></p>
-  <p>Photo Link: <%= f.text_field :link %></p>
-  <p>Password: <%= f.password_field :password %></p>
-  <p>Password Confirmation: <%= f.password_field :password_confirmation %></p>
-  <%= f.submit "Submit" %>
-
-<% end %>
-
-
-
-
-<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-<div class="wrapper">
-  <h1>Register For An Account</h1>
-  <p>To sign-up for a free basic account please provide us with some basic information using
-  the contact form below. Please use valid credentials.</p>
-  <form class="form" method="post" action="yourpage.html">
-    <input type="text" class="name" placeholder="Name">
-    <div>
-      <p class="name-help">Please enter your first and last name.</p>
-    </div>
-    <input type="email" class="email" placeholder="Email">
-     <div>
-      <p class="email-help">Please enter your current email address.</p>
-    </div>
-    <input type="submit" class="submit" value="Register">
-  </form>
+  <% end %>
+  </div>
 </div>
-<p class="optimize">
-  Optimized for Chrome & Firefox!
-</p>
