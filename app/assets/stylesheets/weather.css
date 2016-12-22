@@ -70,7 +70,7 @@
 }
 
 #clockbox {
-	width: 33%;
+	width: 25%;
 	height: 25%;
 /*	border-style: solid;
 	border-width: 3px;*/
@@ -108,7 +108,7 @@
 }
 
 #date {
-	width: 33%;
+	width: 25%;
 	height: 25%;
 	margin-top: 45vh;
 	margin-left: 66%;
