@@ -3,7 +3,9 @@ rvm:
   - 2.3.1
 services:
   - postgresql
-before-script: 
+cache: bundler
+before_install:
   - 'psql -c "create database db/test;" -U postgres'
+before-script: 
   - 'bundle exec rake db:create'
   - 'bundle exec rake db:migrate'
