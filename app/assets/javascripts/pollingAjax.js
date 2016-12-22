@@ -12,13 +12,10 @@ $(document).ready( function() {
  // }
       // <-- time in milliseconds
 
-window.onload = function() {
+
     GetClock();
     console.log(header)
     setInterval(GetClock, 1000);
-    // var header = document.getElementById('header');
-    // var msg = new SpeechSynthesisUtterance($(header).text());
-}
 
  $('.home-page').toggle();
 
@@ -46,12 +43,12 @@ window.onload = function() {
         if (res.status != "false"){
               $('#header').html('Hello ' + res.user_name);
               $('#header').show()
+              var msg = new SpeechSynthesisUtterance("Hello" + res.user_name);
+              window.speechSynthesis.speak(msg);
               setTimeout(function() {
                 $('#header').fadeOut('fast');
                 $('#quote').show();
               }, 5000);
-              var msg = new SpeechSynthesisUtterance("Hello" + res.user_name);
-              window.speechSynthesis.speak(msg);
         }
         loggedIn = res.status;
       };
