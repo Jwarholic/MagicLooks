@@ -12,4 +12,6 @@ Hello <%= @user.name.capitalize %>.
 
 <div class='new-mirrors'></div>
 <div class='add_mirror_user'></div>
-<%= link_to "Edit", edit_user_path(@user) %>
+<div class='edit_mirror'>
+  <%= link_to "Edit", edit_user_path(@user), remote: true %>
+</div>
