@@ -70,7 +70,7 @@
 }
 
 #clockbox {
-	width: 40%;
+	width: 35%;
 	height: 50%;
 /*	border-style: solid;
 	border-width: 3px;*/
@@ -88,7 +88,7 @@
 	border-width: 3px;*/
 	position :absolute;
 	margin-top:66vh;
-	width: 100%;
+	width: 10%;
 	height: 25%;
 	padding-top: 7%;
 	text-align: center;
