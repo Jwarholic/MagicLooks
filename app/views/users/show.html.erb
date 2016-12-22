@@ -1,20 +1,24 @@
 <body id="newform" >
 
 <%= render 'partials/header' %>
-<h1> Profile Page </h1>
 
-Hello <%= @user.name.capitalize %>.
+<div id="header_color"><h1> Profile Page </h1></div>
 
-<div> <%= link_to 'New Mirror', new_mirror_path, class: 'new-mirror', remote: true %> </div>
+<div id="color_blue"><h3>Hello <%= @user.name.capitalize %>. </h3></div>
+
+<div>
+<h3> <%= link_to 'New Mirror', new_mirror_path, class: 'new-mirror', remote: true %>  </h3>
+</div>
 
 <div class='user-mirrors'>
   
-<%= link_to 'New Mirror User', user_mirrors_path, class: 'mirrors-link', remote: true %>
+<h3><%= link_to 'New Mirror User', user_mirrors_path, class: 'mirrors-link', remote: true %></h3>
 </div>
 
 <div class='new-mirrors'></div>
 <div class='add_mirror_user'></div>
-<div class='edit_mirror'>
+<div class='edit_mirror'><h3>
   <%= link_to "Edit", edit_user_path(@user), remote: true %>
-</div>
+</h3></div>
+
 </body>

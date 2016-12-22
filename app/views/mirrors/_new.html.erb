@@ -1,9 +1,10 @@
-<h2>New Mirror</h2>
-
+<div id="header_color"><h2>New Mirror</h2></div>
+<div id='form'>
 <%= form_for @mirror do |f| %>
 <label>Mirror Name: </label>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, id: 'input', placeholder: 'Name' %>
 <label>Login Password: </label>
-  <%= f.password_field :password %>
-  <%= f.submit :submit, class: 'form-button', remote: true %>
+  <%= f.password_field :password,  id: 'input', placeholder: 'Password'  %>
+  <%= f.submit :submit, class: 'form-button', remote: true, id: 'usersubmit'  %>
 <% end %>
+</div>
