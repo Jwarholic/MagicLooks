@@ -1,11 +1,14 @@
-<% if !@mirror.users.empty? %>
-  <ul>
-    <% @mirror.users do |user| %>
-      <li><%= user.name %></li>
-      <li> <%= link_to 'Add User', new_user_mirror_path, remote: true %> </li>
-    <%end%>
-<% else %>
-    <li> <%= link_to 'Add User', new_user_mirror_path, remote: true %> </li>
+<% if @mirror.users.empty? %>
+  <h2>empty</h2>
+    <li> <%= link_to 'Add User(the if)', new_user_mirror_path, remote: true %> </li>
     <div class='new-form'></div>
-  </ul>
+  <!-- <ul> -->
+<% else %>
+<h2>not empty</h2>
+    <% @mirror.users.each do |user| %>
+      <li><%= user.name %></li>
+      <li> <span id ="test"></span> <%= link_to 'Add User(the else)', new_user_mirror_path, remote: true, id: "new-form" %> </li>
+    <%end%>
+
+  <!-- </ul> -->
 <% end %>
