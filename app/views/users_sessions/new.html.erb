@@ -1,9 +1,13 @@
-<ph1>Login</h1>
+<%= render 'partials/header' %>
+<body id="newform">
+	<div id='form'>
+	<h1 id='h1'>Sign in to your account.</h1>
+	  <%= form_tag users_sessions_path  %>
 
-<%= form_tag users_sessions_path do %>
+	    <p><%= text_field_tag :email, "", id: 'input' , placeholder: 'Email' %></p>
+	    <p><%= password_field_tag :password, "", id: 'input', placeholder: 'Password' %></p>
+	    <%= submit_tag "Submit", id: 'usersubmit'  %>
 
-  Email: <%= text_field_tag :email %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
-
-<% end %>
+	  </div>
+	</div>
+</body>
