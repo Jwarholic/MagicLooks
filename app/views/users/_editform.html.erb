@@ -4,12 +4,16 @@
 		<br>
 	<% end %>
 <% end %>
-
+<div id="header_color"><h3>
+Edit Your Info
+</h3><div id='form'>
 <%= form_for @user do |f| %>
 
-  Name: <%= f.text_field :name %>
-  Email: <%= f.text_field :email %>
+  Name: <%= f.text_field :name , id: 'input', placeholder: 'Name'%>
+  Email: <%= f.text_field :email,id: 'input', placeholder: 'Email'  %>
 
-  <%= f.submit "Submit" %>
+  <%= f.submit "Submit", id: 'usersubmit' %>
 
  <% end %>
+ </div>
+ </div>
