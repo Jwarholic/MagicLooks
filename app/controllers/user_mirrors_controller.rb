@@ -15,6 +15,7 @@ class UserMirrorsController < ApplicationController
 
   def new
     @user = User.new()
+    @user_mirror = UserMirror.new()
   end
 
   def create
