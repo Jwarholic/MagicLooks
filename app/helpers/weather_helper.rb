@@ -9,7 +9,6 @@ def self.weather
 
 
         #Call the weather api for the results.
-   # weather = "http://api.openweathermap.org/data/2.5/weather?q=sanfrancisco&appid=0b00512afd38eb31d828e615774a2fd4&units=imperial"
         weather = "http://api.openweathermap.org/data/2.5/weather?lat=37.77&lon=-122.42&appid=#{key}&units=imperial"
         results = HTTParty.get(weather)
  end
@@ -25,7 +24,8 @@ def self.weather
     #800 clear DONE
     #801-804 clouds DONE
     #900-999 extreme DONE
-    
+    p weather
+    p '*************************************************'
     weather_id = weather["weather"][0]["id"]
     if weather_id > 800 && weather_id < 805 || weather_id >= 700 && weather_id < 800
       return "
