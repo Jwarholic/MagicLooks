@@ -10,10 +10,7 @@ $(document).ready( function() {
  //     //Hide the name
  //     // Show the quote
  // }
-     setTimeout(function() {
-     $('#header').fadeOut('fast');
-     $('#quote').show();
- }, 5000); // <-- time in milliseconds
+      // <-- time in milliseconds
 
 window.onload = function() {
     GetClock();
@@ -48,6 +45,10 @@ window.onload = function() {
         $('.home-page').toggle();
         if (res.status != "false"){
               $('#header').html('Hello ' + res.user_name);
+              setTimeout(function() {
+                $('#header').fadeOut('fast');
+                $('#quote').show();
+              }, 5000);
               var msg = new SpeechSynthesisUtterance("Hello" + res.user_name);
               window.speechSynthesis.speak(msg);
         }
