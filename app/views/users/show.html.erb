@@ -1,9 +1,11 @@
+<body id="newform" >
+
 <%= render 'partials/header' %>
 <h1> Profile Page </h1>
 
 Hello <%= @user.name.capitalize %>.
 
-<%= link_to 'New Mirror', new_mirror_path, class: 'new-mirror', remote: true %>
+<div> <%= link_to 'New Mirror', new_mirror_path, class: 'new-mirror', remote: true %> </div>
 
 <div class='user-mirrors'>
   
@@ -15,3 +17,4 @@ Hello <%= @user.name.capitalize %>.
 <div class='edit_mirror'>
   <%= link_to "Edit", edit_user_path(@user), remote: true %>
 </div>
+</body>
