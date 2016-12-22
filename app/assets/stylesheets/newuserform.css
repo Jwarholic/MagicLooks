@@ -1,6 +1,6 @@
 /*/*dark background to support form theme*/
 #newform{
-  background:url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/dark_wall.png);
+  background-image: url("background.jpg"); 
 }
 
 /*sass variables used*/
