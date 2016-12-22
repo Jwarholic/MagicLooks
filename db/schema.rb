@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20161218200214) do
   end
 
   create_table "user_mirrors", force: :cascade do |t|
+    t.string   "name"
     t.integer  "user_id"
     t.integer  "mirror_id"
     t.datetime "created_at", null: false

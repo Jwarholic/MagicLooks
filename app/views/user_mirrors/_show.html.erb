@@ -1,0 +1,11 @@
+<ul>
+<% if @mirror.users.empty? %>
+    <li> <%= link_to 'Add User', new_user_mirror_path, remote: true %> </li>
+<% else %>
+    <% @mirror.users.each do |user| %>
+      <li> <%= user.name %> </li>
+    <%end%>
+      <li> <%= link_to 'Add User', new_user_mirror_path, remote: true, id: "new-form" %> </li>
+    <div class='new-form'></div >
+<% end %>
+</ul>

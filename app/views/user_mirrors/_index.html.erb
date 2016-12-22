@@ -1,0 +1,6 @@
+<ul>
+  <% @mirrors.each do |mirror| %>
+    <li> <%= link_to mirror.name, user_mirror_path(@user), class: 'new-user-link', remote: true %> </li>
+  <% end %>
+</ul>
+<li class='users-signup'></li>
