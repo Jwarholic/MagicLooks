@@ -1,6 +1,6 @@
 /*/*dark background to support form theme*/
 #newform{
-background-image: url("background.jpg"); 
+  background-image: url("background.jpg"); 
 }
 
 /*sass variables used*/
