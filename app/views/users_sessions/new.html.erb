@@ -1,7 +1,7 @@
 <%= render 'partials/header' %>
 <body id="newform">
 	<div id='form'>
-	<h1 id='h1'>Sign in to your account.</h1>
+		<h1 id='h1'>Sign in to your account.</h1>
 	  <%= form_tag users_sessions_path  %>
 
 	    <p><%= text_field_tag :email, "", id: 'input' , placeholder: 'Email' %></p>
