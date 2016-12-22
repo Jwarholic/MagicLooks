@@ -77,7 +77,7 @@
 	margin-top: 33vh;
 	margin-left: 64%;
 	position: absolute;
-  	font-size: 5vh;
+  	font-size: 9vh;
   	line-height: 100px;
  	text-align: left;
 }
@@ -108,14 +108,14 @@
 }
 
 #date {
-	width: 33%;
+	width: 35%;
 	height: 25%;
 	margin-top: 45vh;
 	margin-left: 66%;
 	position: absolute;
-  font-size: 4vh;
-  line-height: 150px;
-  text-align: center;
+  	font-size: 7vh;
+  	line-height: 150px;
+  	text-align: left;
 }
 
 
