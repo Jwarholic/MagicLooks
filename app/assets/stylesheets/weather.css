@@ -33,7 +33,7 @@
 
 	width: 33%;
 	margin-top: 19vh;
-	margin-left: 15%;
+	margin-left: 10%;
 	font-size: 30px;
 }
 
@@ -70,7 +70,7 @@
 }
 
 #clockbox {
-	width: 25%;
+	width: 33%;
 	height: 25%;
 /*	border-style: solid;
 	border-width: 3px;*/
@@ -79,7 +79,7 @@
 	position: absolute;
   font-size: 10vh;
   line-height: 100%;
-  text-align: center;
+  text-align: left;
 }
 
 #ajax-container {
@@ -108,7 +108,7 @@
 }
 
 #date {
-	width: 25%;
+	width: 33%;
 	height: 25%;
 	margin-top: 45vh;
 	margin-left: 66%;
