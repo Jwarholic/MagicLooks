@@ -1,24 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Dev BootCamp Final Project: Magic Looks DevBootCamps Smartest Mirror.
 
-Things you may want to cover:
+Tema Members:
 
-* Ruby version
+  - Dawit Hailu:    Team leader, project designer, python, raspberry pi programmer, ruby on rails
+  - Amrin Grewal:   Face api, and emotion api, ruby o rails
+  - Jason Warholic: Heroku, css, bootstrap, javascript, user sign-in, ruby on rails
+  - Brandon Huang:  News and weather api, user sign-in, ruby on rails
+  - Collin Shelby:  Ajax , jquery, javascript, slideshow, github, ruby on rails
+  
+Project Goal: 
 
-* System dependencies
+  - The Goal of this project was for users to get up in the morning and stand infornt of their mirror as they normally would in the morning. After they had signed up with our website they can stand infornt of their magiclooks smart mirror and the mirror will user facial recognition to recognize the user infront of the mirror and manually log them in and great them with the current weather, time and news for their area.
+  
+Tech Stack: 
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  - GitHub
+  - Heroku
+  - Ruby on Rails
+  - Javascript
+  - Ajax/Jquery
+  - Python
+  - Html/5/CSS/3
+  - Bootstrap
+  - Microsoft Face api
+  - Amazon Alexa
+  
